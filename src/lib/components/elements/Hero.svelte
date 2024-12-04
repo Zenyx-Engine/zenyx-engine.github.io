@@ -9,6 +9,7 @@
       return () => mounted = false;
     });
   
+    // @ts-ignore
     function handleMouseMove(event) {
       if (!mounted) return;
       mouseX = event.clientX;
@@ -19,18 +20,19 @@
   <div 
     class="min-h-screen bg-black overflow-hidden"
     on:mousemove={handleMouseMove}
+    role="presentation"
   >
     <!-- Grid Background -->
     <div 
       class="absolute inset-0"
       style:background-image="repeating-linear-gradient(to right, rgba(59, 130, 246, 0.2), rgba(59, 130, 246, 0.2) 1px, transparent 1px, transparent 24px), repeating-linear-gradient(to bottom, rgba(59, 130, 246, 0.2), rgba(59, 130, 246, 0.2) 1px, transparent 1px, transparent 24px)"
-    />
+    ></div>
   
     <!-- Mouse Gradient -->
     <div 
       class="absolute inset-0" 
-      style:background={radial-gradient(600px circle at ${mouseX}px ${mouseY}px, rgba(59, 130, 246, 0.15), transparent 80%)}
-    />
+      style:background={`radial-gradient(600px circle at ${mouseX}px ${mouseY}px, rgba(59, 130, 246, 0.15), transparent 80%)`}
+    ></div>
   
     <!-- Content -->
     <div class="relative flex flex-col items-center justify-center min-h-screen p-8 text-center">
@@ -48,7 +50,9 @@
         </svg>
       </button>
     </div>
-  </div>
+  </div> 
+  
+  
 
 <style>
     @keyframes pulse {
@@ -63,7 +67,5 @@
         }
     }
 
-    .animate-pulse {
-        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
+
 </style>
