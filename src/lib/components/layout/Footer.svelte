@@ -6,7 +6,7 @@ export let footerItems = [
     }
 ]
 </script>
-<footer class="footer bottom-0 text-center padding p-4 border-white border-t-2 bg-gray-900 text-white w-full">
+<footer class="footer bottom-0 text-center padding p-4 border-white/20 border-t-2 bg-black text-white w-full">
     <div class="flex items-center space-x-4">
         {#each footerItems as Item}
         <a href="Item.href">

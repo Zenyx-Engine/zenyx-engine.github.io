@@ -14,12 +14,12 @@
       href: "/about",
       label: "About",
       icon: QuestionCircleSolid,
-    },
+    }, //unused
   ];
   let rightNavItems = [
     {
       href: "/features",
-      label: "Products",
+      label: "Features",
     },
     {
       href: "/docs",
@@ -38,14 +38,11 @@
 
 <nav class="left-nav flex justify-between bg-black/20 backdrop-blur-sm sticky top-0 z-50 p-0">
   <div class="flex items-center space-x-4">
-  <img src="typeface.svg" alt="Zenyx Logo" class="h-12" />
+  <a href="/">
+  <img  src="typeface.svg" alt="Zenyx Logo" class="h-12" />
+  </a>
   <div class="flex items-center space-x-4 p-4">
-    {#each leftNavItems as item}
-      <a href={item.href}>
-        <svelte:component this={item.icon} />
-        <span>{item.label}</span>
-      </a>
-    {/each}
+
   </div>
 </div>
   <div class="right-nav flex items-center space-x-4 p-4">
@@ -53,7 +50,7 @@
       <a href={item.href}>
         <span>{item.label}</span>
       </a>
-    {/each}
+    {/each} 
   </div>
 </nav>
 
