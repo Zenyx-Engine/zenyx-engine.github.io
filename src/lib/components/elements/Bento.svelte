@@ -94,7 +94,6 @@
     hoverStates[index].isHovered = false;
   }
 
-  // Add these at the top of your script
   let mouseX = 0;
   let mouseY = 0;
 
@@ -106,27 +105,24 @@
   <section 
     class="py-0 px-0 bg-black relative"
     on:mousemove={handleSectionMouseMove}
+    role="region"
   >
-
-
-
-    <div class="max-w-7xl mx-auto relative z-10 px-24 py-12">
-      <div class="text-center mb-20">
-        <h2 class="text-4xl font-bold mb-6">
-          <span class="bg-gradient-to-r from-cyan-300 via-blue-400 to-violet-400 text-transparent bg-clip-text">
-            Everything You Need
-          </span>
-        </h2>
-        <p class="text-lg text-gray-400 max-w-2xl mx-auto">
-          OmniForge provides a complete platform for managing your entire deployment lifecycle,
-          from development to production at any scale.
-        </p>
-      </div>
+          <div class="max-w-7xl mx-auto relative z-10 px-4 sm:px-6 md:px-12 lg:px-24 py-8 md:py-12">
+            <div class="text-center mb-12 md:mb-20">
+              <h2 class="text-3xl md:text-4xl font-bold mb-4 md:mb-6">
+                <span class="bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 text-transparent bg-clip-text">
+                  The features you love
+                </span>
+              </h2>
+              <p class="text-base md:text-lg text-amber-400/80 max-w-2xl mx-auto px-4">
+                Zenyx aims to provide a fully featured toolset of components, utilites, and just nice to have features that you can use to build your next project. Game or otherwise.
+              </p>
+            </div>
     
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-fr">
-        {#each features as feature, i}
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 auto-rows-fr">
+              {#each features as feature, i}
           <div 
-            class="group relative p-6 bg-gray-950/80 backdrop-blur-sm rounded-lg transition-all duration-300 overflow-hidden h-full {feature.className}"
+            class="group relative p-4 md:p-6 bg-gray-950/80 backdrop-blur-sm rounded-lg transition-all duration-300 overflow-hidden h-full {feature.className}"
             style="border: 1px solid; border-image: radial-gradient(900px circle at {mouseX}px {mouseY}px, rgba(234,178,84,0.5), rgba(234,178,84,0.1)) 1;"
             on:mousemove={(e) => handleMouseMove(e, i)}
             on:mouseenter={() => handleMouseEnter(i)}
@@ -159,15 +155,15 @@
             ></div>
 
             <div class="relative h-full flex flex-col">
-              <div class="flex items-center gap-4 mb-4">
-                <div class="p-2 rounded-lg bg-gray-900/50 backdrop-blur-xl">
-                  <svelte:component this={feature.icon} class="w-8 h-8 text-yellow-400" />
+              <div class="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                <div class="p-1.5 md:p-2 rounded-lg bg-gray-900/50 backdrop-blur-xl">
+                  <svelte:component this={feature.icon} class="w-6 h-6 md:w-8 md:h-8 text-yellow-400" />
                 </div>
-                <h3 class="text-lg font-semibold text-gray-200">
+                <h3 class="text-base md:text-lg font-semibold text-gray-200">
                   {feature.title}
                 </h3>
               </div>
-              <p class="text-sm text-gray-400 leading-relaxed flex-grow">
+              <p class="text-xs md:text-sm text-gray-400 leading-relaxed flex-grow">
                 {feature.description}
               </p>
             </div>
