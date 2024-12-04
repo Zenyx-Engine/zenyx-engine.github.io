@@ -11,7 +11,7 @@
 
   let leftNavItems = [
     {
-      href: "/about",
+      href: "/features",
       label: "About",
       icon: QuestionCircleSolid,
     }, //unused
@@ -22,15 +22,15 @@
       label: "Features",
     },
     {
-      href: "/docs",
+      href: "/features",
       label: "Docs",
     },
     {
-      href: "/community",
+      href: "/features",
       label: "Community",
     },
     {
-      href: "/get",
+      href: "/features",
       label: "Github",
     },
   ];

@@ -1,7 +1,6 @@
 <!-- src/routes/+page.svelte -->
 <script>
     import Bento from "$lib/components/elements/Bento.svelte";
-    export const prerender = true
 import Hero from "$lib/components/elements/Hero.svelte";
 
 const features = [
