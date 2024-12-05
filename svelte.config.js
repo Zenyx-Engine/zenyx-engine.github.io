@@ -7,7 +7,7 @@ const config = {
 		adapter: adapter({
 			pages: "build",
 			assets: "build",
-			fallback: null,
+			fallback: '+error.svelte',
 			precompress: false,
 			strict: true
 		})
