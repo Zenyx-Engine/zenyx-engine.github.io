@@ -9,16 +9,34 @@
     let mouseX = 0;
     let mouseY = 0;
     let statuscode = $page.status
-  
+    
     const errorMessages = [
       [404, [
         "This page couldnt be found. Have you tried asking siri?",
         "I think google maps may have lied to you, this page doesnt exist",
-        "Page not found - Maybe its out getting a cup of java?"
+        "Page not found - Maybe its out getting a cup of java?",
+        "Looks like this page is playing hide and seek... and winning!",
+        "This page has gone on vacation to find itself",
+        "This page has commitment issues. Check back later",
+        "This page is exploring the Bermuda Triangle",
+        "404: Page is in witness protection (alledgedly)",
+        "This page is busy building a time machine. maybe you will find it yesterday?",
+
       ]],
       [500, [
         "Something went wrong. try again later?",
-        "An error has occured, "
+        "An error has occured, ",
+        "The hamsters powering our servers need a coffee break",
+        "Our servers decided to rage quit",
+        "500: Server is questioning its life choices",
+        "Looks like our servers joined a meditation retreat",
+        "Our server farm had a bad harvest",
+        "500: Servers went on strike for better working conditions",
+        "Our servers are out seeking therapy",
+        "The servers are practicing their synchronized swimming",
+        "The backend is having an existential breakdown",
+        "The data center is having a moment",
+        "500: Server caught a case of the Mondays",
       ]],
       [403, [
         "The bouncer says you're not on the list",
