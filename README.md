@@ -37,9 +37,12 @@ You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
 
----
 
 note: most* things in this repo are meant to be well documented, but some things are not. Apologies to any future contributors in advance - Caz.
+
+---
+# TODO 📝
+- [ ] Add a documentation framework
 
 # FIXME ⚠️
 - [X] under constructin page return home doesnt have a consistent hitbox
