@@ -30,7 +30,7 @@
       label: "Community",
     },
     {
-      href: "/features",
+      href: "https://github.com/Zenyx-Engine/Zenyx",
       label: "Github",
     },
   ];
