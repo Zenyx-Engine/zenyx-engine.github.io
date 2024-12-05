@@ -31,7 +31,7 @@
     },
     {
       href: "https://github.com/Zenyx-Engine/Zenyx",
-      label: "Github",
+      label: "Source",
     },
   ];
 
