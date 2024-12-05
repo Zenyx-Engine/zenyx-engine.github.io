@@ -61,7 +61,7 @@
         <div class="wave3"></div>
       </div>
     </div>
-
+    <button class="mt-8">
     <a 
       href="/"
       class="inline-block px-6 py-3 text-amber-500 border border-amber-500/50 rounded-lg
@@ -70,6 +70,7 @@
     >
       Return Home
     </a>
+    </button>
   </div>
 </div>
 

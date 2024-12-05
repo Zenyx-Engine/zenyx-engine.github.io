@@ -40,3 +40,11 @@ You can preview the production build with `npm run preview`.
 ---
 
 note: most* things in this repo are meant to be well documented, but some things are not. Apologies to any future contributors in advance - Caz.
+
+# FIXME ⚠️
+- [ ] navbar links dont lead anywhere
+- [ ] footer links dont lead anywhere
+- [ ] width of feature panels are inconsistent and illogical (e.g. long text in short boxes, vice versaa)
+- [ ] hover effect for bento borders is global (applies to all bento borders)
+- [ ] grid hover on hero section does not move when scrolling
+- [X] under constructin pages return home doesnt have a consistent hitbox
