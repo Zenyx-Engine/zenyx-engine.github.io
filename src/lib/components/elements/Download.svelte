@@ -47,7 +47,7 @@
       return () => mounted = false;
     });
 
-    const handleMouseMove = (event) => {
+    const handleMouseMove = (/** @type {{ clientX: number; clientY: number; }} */ event) => {
       if (!mounted) return;
       mouseX = event.clientX;
       mouseY = event.clientY;
@@ -64,11 +64,17 @@
       platformDropdownOpen = false;
     }
 
+    /**
+     * @param {{ platform: string; architectures: { name: string; label: string; link: string; }[]; }} platform
+     */
     function selectPlatform(platform) {
       selectedPlatform = platform;
       platformDropdownOpen = false;
     }
 
+    /**
+     * @param {{ name: string; label: string; link: string; }} arch
+     */
     function selectArchitecture(arch) {
       selectedArchitecture = arch;
       architectureDropdownOpen = false;

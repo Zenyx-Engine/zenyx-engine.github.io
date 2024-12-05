@@ -1,10 +1,14 @@
 <script>
+// @ts-nocheck
+
     import { onMount } from 'svelte';
     import { AlertTriangle } from 'lucide-svelte';
+    import { page } from '$app/stores'; 
     
     let mounted = false;
     let mouseX = 0;
     let mouseY = 0;
+    let statuscode = $page.status
   
     const errorMessages = [
       [404, [
@@ -66,12 +70,12 @@
   
       <h1 class="text-8xl font-bold mb-6 animate-glitch">
         <span class="bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 text-transparent bg-clip-text">
-          404
+          {statuscode}
         </span>
       </h1>
   
       <p class="text-2xl text-amber-400/80 max-w-2xl mx-auto mb-8 animate-fade-in">
-        {getRandomMessage(404)}
+        {getRandomMessage(statuscode)}
       </p>
   
       <!-- Animated wave decoration -->

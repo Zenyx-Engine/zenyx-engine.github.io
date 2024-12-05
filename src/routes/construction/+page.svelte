@@ -11,7 +11,7 @@
     return () => mounted = false;
   });
 
-  const handleMouseMove = (event) => {
+  const handleMouseMove = (/** @type {{ clientX: number; clientY: number; }} */ event) => {
     if (!mounted) return;
     mouseX = event.clientX;
     mouseY = event.clientY;
