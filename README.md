@@ -46,7 +46,7 @@ note: most* things in this repo are meant to be well documented, but some things
 
 # FIXME ⚠️
 - [X] under constructin page return home doesnt have a consistent hitbox
-- [ ] navbar links dont lead anywhere
+- [X] navbar links dont lead anywhere
 - [ ] footer links dont lead anywhere
 - [ ] width of feature panels are inconsistent and illogical (e.g. long text in short boxes, vice versaa)
 - [ ] hover effect for bento borders is global (applies to all bento borders)

@@ -62,4 +62,11 @@ const features = [
 </script>
 
 <Hero />
-<Bento />
+<div id="target">
+<Bento/>
+</div>
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+</style>

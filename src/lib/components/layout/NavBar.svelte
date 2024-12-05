@@ -11,22 +11,22 @@
 
   let leftNavItems = [
     {
-      href: "/features",
+      href: "/construction",
       label: "About",
       icon: QuestionCircleSolid,
     }, //unused
   ];
   let rightNavItems = [
     {
-      href: "/features",
+      href: "/#target",
       label: "Features",
     },
     {
-      href: "/features",
+      href: "/construction",
       label: "Docs",
     },
     {
-      href: "/features",
+      href: "/construction",
       label: "Community",
     },
     {
@@ -77,6 +77,7 @@
 </nav>
 
 <style>
+  
   nav {
     display: flex;
     gap: 2rem;
