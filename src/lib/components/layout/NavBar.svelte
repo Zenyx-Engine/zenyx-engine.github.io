@@ -22,8 +22,12 @@
       label: "Features",
     },
     {
-      href: "/construction",
+      href: "/docs",
       label: "Docs",
+    },
+    {
+      href: "/construction",
+      label: "Blog",
     },
     {
       href: "/construction",
