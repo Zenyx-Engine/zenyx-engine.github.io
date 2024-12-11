@@ -19,7 +19,7 @@
         "This page has gone on vacation to find itself",
         "This page has commitment issues. Check back later",
         "This page is exploring the Bermuda Triangle",
-        "404: Page is in witness protection (alledgedly)",
+        "404: Page is in witness protection (allegedly)",
         "This page is busy building a time machine. maybe you will find it yesterday?",
 
       ]],
