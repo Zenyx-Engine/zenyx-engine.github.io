@@ -3,7 +3,11 @@
   import { onMount } from 'svelte';
   import { Copy, CheckCheck } from 'lucide-svelte';
 
-  export let content: string = '';
+  interface Props {
+    content?: string;
+  }
+
+  let { content = '' }: Props = $props();
   let copied: boolean = false;
 
   // Configure marked options
@@ -100,10 +104,10 @@
 <!-- SVG Icons -->
 <svg class="hidden">
   <symbol id="copy-icon" viewBox="0 0 24 24">
-      <svelte:component this={Copy} />
+      <Copy />
   </symbol>
   <symbol id="check-icon" viewBox="0 0 24 24">
-      <svelte:component this={CheckCheck} />
+      <CheckCheck />
   </symbol>
 </svg>
 

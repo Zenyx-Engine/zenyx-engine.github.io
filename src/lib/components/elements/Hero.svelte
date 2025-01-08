@@ -1,6 +1,6 @@
 <script>
     import { onMount } from 'svelte';
-    let mounted = false, mouseX = 0, mouseY = 0;
+    let mounted = false, mouseX = $state(0), mouseY = $state(0);
   
     onMount(() => {
       mounted = true;
@@ -14,7 +14,7 @@
     }
   </script>
 
-  <div class="min-h-screen bg-black overflow-hidden" on:mousemove={handleMouseMove} role="presentation">
+  <div class="min-h-screen bg-black overflow-hidden" onmousemove={handleMouseMove} role="presentation">
     <!-- Grid with glow -->
     <div class="absolute inset-0" style:background-image="repeating-linear-gradient(45deg,rgb(139,69,19,.1),rgb(234,178,84,0.1) 1px,transparent 1px,transparent 24px),repeating-linear-gradient(135deg,rgb(139,69,19,.1),rgb(139,69,19,.1) 1px,transparent 1px,transparent 24px)" style:filter="drop-shadow(0 0 2px rgba(139,69,19,0.5))"></div>
     <div class="absolute inset-0" style:background={`radial-gradient(900px circle at ${mouseX}px ${mouseY}px,rgba(234,178,84,.15),transparent 80%)`}></div>

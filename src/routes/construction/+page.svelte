@@ -3,8 +3,8 @@
   import { Wrench, Construction, Hammer } from 'lucide-svelte';
   
   let mounted = false;
-  let mouseX = 0;
-  let mouseY = 0;
+  let mouseX = $state(0);
+  let mouseY = $state(0);
 
   onMount(() => {
     mounted = true;
@@ -20,7 +20,7 @@
 
 <div 
   class="min-h-screen bg-black overflow-hidden relative flex items-center justify-center"
-  on:mousemove={handleMouseMove}
+  onmousemove={handleMouseMove}
   role="presentation"
 >
   <!-- Grid with glow (similar to Hero) -->

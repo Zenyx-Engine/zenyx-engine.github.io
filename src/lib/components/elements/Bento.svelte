@@ -62,12 +62,12 @@
   ];
 
   // Card hover state tracking
-  let hoverStates = features.map(() => ({
+  let hoverStates = $state(features.map(() => ({
     isHovered: false,
     mousePosition: { x: 0, y: 0 }
-  }));
+  })));
   
-  let supportsSpotlight = true;
+  let supportsSpotlight = $state(true);
 
   onMount(() => {
     const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
@@ -94,8 +94,8 @@
     hoverStates[index].isHovered = false;
   }
 
-  let mouseX = 0;
-  let mouseY = 0;
+  let mouseX = $state(0);
+  let mouseY = $state(0);
 
   function handleSectionMouseMove(event: MouseEvent) {
     mouseX = event.clientX;
@@ -104,7 +104,7 @@
 </script>
   <section 
     class="py-0 px-0 bg-black relative"
-    on:mousemove={handleSectionMouseMove}
+    onmousemove={handleSectionMouseMove}
     role="region"
   >
           <div class="max-w-7xl mx-auto relative z-10 px-4 sm:px-6 md:px-12 lg:px-24 py-8 md:py-12">
@@ -124,9 +124,9 @@
           <div 
             class="group relative p-4 md:p-6 bg-gray-950/80 backdrop-blur-sm rounded-lg transition-all duration-300 overflow-hidden h-full {feature.className}"
             style="border: 1px solid; border-image: radial-gradient(900px circle at {mouseX}px {mouseY}px, rgba(234,178,84,0.5), rgba(234,178,84,0.1)) 1;"
-            on:mousemove={(e) => handleMouseMove(e, i)}
-            on:mouseenter={() => handleMouseEnter(i)}
-            on:mouseleave={() => handleMouseLeave(i)}
+            onmousemove={(e) => handleMouseMove(e, i)}
+            onmouseenter={() => handleMouseEnter(i)}
+            onmouseleave={() => handleMouseLeave(i)}
             role="button"
             tabindex="0"
           >
@@ -157,7 +157,7 @@
             <div class="relative h-full flex flex-col">
               <div class="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
                 <div class="p-1.5 md:p-2 rounded-lg bg-gray-900/50 backdrop-blur-xl">
-                  <svelte:component this={feature.icon} class="w-6 h-6 md:w-8 md:h-8 text-yellow-400" />
+                  <feature.icon class="w-6 h-6 md:w-8 md:h-8 text-yellow-400" />
                 </div>
                 <h3 class="text-base md:text-lg font-semibold text-gray-200">
                   {feature.title}

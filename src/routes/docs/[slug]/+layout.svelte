@@ -30,18 +30,23 @@
     currentDoc?: Doc;
   }
  
-  export let data: PageData;
+  interface Props {
+    data: PageData;
+    children?: import('svelte').Snippet;
+  }
+
+  let { data, children }: Props = $props();
  
   let searchQuery = '';
   let isMenuOpen = false;
-  let openCategories: string[] = [];
+  let openCategories: string[] = $state([]);
  
 
-  $: filteredDocs = data.docs.filter((doc: Doc) =>
+  let filteredDocs = $derived(data.docs.filter((doc: Doc) =>
     doc.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     (doc.excerpt ?? '').toLowerCase().includes(searchQuery.toLowerCase()) ||
     doc.tags?.some((tag: string) => tag.toLowerCase().includes(searchQuery.toLowerCase()))
-  );
+  ));
  
   function toggleCategory(category: string) {
     if (openCategories.includes(category)) {
@@ -52,14 +57,14 @@
   }
  
   // Explicitly type the reduce function
-  $: docsByCategory = data.docs.reduce((acc: Record<string, Doc[]>, doc: Doc) => {
+  let docsByCategory = $derived(data.docs.reduce((acc: Record<string, Doc[]>, doc: Doc) => {
     const category = doc.category || 'Uncategorized';
     if (!acc[category]) {
       acc[category] = [];
     }
     acc[category].push(doc);
     return acc;
-  }, {});
+  }, {}));
 </script>
 
 <div class="min-h-screen bg-black">
@@ -74,7 +79,7 @@
         {#each Object.entries(docsByCategory) as [category, docs]}
           <div class="mb-4">
             <button
-              on:click={() => toggleCategory(category)}
+              onclick={() => toggleCategory(category)}
               class="w-full flex items-center justify-between px-3 py-2 text-sm font-medium
                      text-zinc-400 hover:text-white rounded-lg hover:bg-white/5"
             >
@@ -108,7 +113,7 @@
     <!-- Main content -->
     <main class="flex-1 min-w-0 py-6 lg:px-8 xl:px-12">
       <div class="px-4 sm:px-6 lg:px-0">
-        <slot />
+        {@render children?.()}
       </div>
     </main>
     <!-- Table of contents -->

@@ -1,5 +1,6 @@
-<script>
-// @ts-nocheck
+
+<script lang="ts">
+
 
     import { onMount } from 'svelte';
     import { AlertTriangle } from 'lucide-svelte';
@@ -44,10 +45,10 @@
       ]]
     ];
   
-    function getRandomMessage(code) {
+    function getRandomMessage(code: Number) {
       const errorGroup = errorMessages.find(([errorCode]) => errorCode === code);
       if (!errorGroup) return "Unexpected error occurred";
-      const messages = errorGroup[1];
+      const messages: String[] = errorGroup[1] as String[];
       return messages[Math.floor(Math.random() * messages.length)];
     }
   
@@ -56,7 +57,7 @@
       return () => mounted = false;
     });
   
-    const handleMouseMove = (event) => {
+    const handleMouseMove = (event: { clientX: number; clientY: number; }) => {
       if (!mounted) return;
       mouseX = event.clientX;
       mouseY = event.clientY;

@@ -1,9 +1,11 @@
 <script>
+  import { run } from 'svelte/legacy';
+
     import { onMount } from 'svelte';
     import { Download, Settings, ChevronDown } from 'lucide-svelte';
   
-    let mouseX = 0;
-    let mouseY = 0;
+    let mouseX = $state(0);
+    let mouseY = $state(0);
     let mounted = false;
 
     const downloads = [
@@ -29,18 +31,18 @@
       }
     ];
   
-    let selectedPlatform = downloads[0];
-    let selectedArchitecture = selectedPlatform.architectures[0];
-    let platformDropdownOpen = false;
-    let architectureDropdownOpen = false;
+    let selectedPlatform = $state(downloads[0]);
+    let selectedArchitecture = $state(selectedPlatform.architectures[0]);
+    let platformDropdownOpen = $state(false);
+    let architectureDropdownOpen = $state(false);
   
-    $: availableArchitectures = selectedPlatform.architectures;
-    $: {
+    let availableArchitectures = $derived(selectedPlatform.architectures);
+    run(() => {
       // Reset architecture if current one not available in new platform
       if (!availableArchitectures.includes(selectedArchitecture)) {
         selectedArchitecture = availableArchitectures[0];
       }
-    }
+    });
 
     onMount(() => {
       mounted = true;
@@ -83,7 +85,7 @@
   
 <div 
   class="min-h-screen bg-black overflow-hidden relative flex items-center justify-center"
-  on:mousemove={handleMouseMove}
+  onmousemove={handleMouseMove}
 >
   <!-- Grid with glow -->
   <div class="absolute inset-0"
@@ -115,7 +117,7 @@
         <h3 class="text-sm text-amber-400/60 mb-2">Platform</h3>
         <button 
           class="w-full bg-black/50 border border-amber-500/30 p-3 rounded-lg flex items-center justify-between hover:bg-amber-500/10 transition-all duration-300"
-          on:click={togglePlatformDropdown}
+          onclick={togglePlatformDropdown}
         >
           <div class="flex items-center gap-2">
             <Settings class="w-5 h-5 text-amber-400" />
@@ -131,7 +133,7 @@
             {#each downloads as platform}
               <button 
                 class="w-full text-left p-3 hover:bg-amber-500/10 {selectedPlatform === platform ? 'bg-amber-500/20' : ''}"
-                on:click={() => selectPlatform(platform)}
+                onclick={() => selectPlatform(platform)}
               >
                 <span class="{selectedPlatform === platform ? 'text-amber-300' : 'text-amber-400/80'}">
                   {platform.platform}
@@ -154,7 +156,7 @@
           <h3 class="text-sm text-amber-400/60 mb-2">Architecture</h3>
           <button 
             class="w-full bg-black/50 border border-amber-500/30 p-3 rounded-lg flex items-center justify-between hover:bg-amber-500/10 transition-all duration-300"
-            on:click={toggleArchitectureDropdown}
+            onclick={toggleArchitectureDropdown}
           >
             <div class="flex items-center gap-2">
               <span class="text-amber-300">
@@ -172,7 +174,7 @@
               {#each availableArchitectures as arch}
                 <button 
                   class="w-full text-left p-3 hover:bg-amber-500/10 {selectedArchitecture === arch ? 'bg-amber-500/20' : ''}"
-                  on:click={() => selectArchitecture(arch)}
+                  onclick={() => selectArchitecture(arch)}
                 >
                   <div class="flex justify-between items-center">
                     <span class="{selectedArchitecture === arch ? 'text-amber-300' : 'text-amber-400/80'}">

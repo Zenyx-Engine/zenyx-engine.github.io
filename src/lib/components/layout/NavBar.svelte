@@ -39,7 +39,7 @@
     },
   ];
 
-  let isMenuOpen = false;
+  let isMenuOpen = $state(false);
   const toggleMenu = () => {
     isMenuOpen = !isMenuOpen;
   };
@@ -55,7 +55,7 @@
   </div>
   
   <!-- Mobile menu button -->
-  <button class="md:hidden p-4" on:click={toggleMenu}>
+  <button class="md:hidden p-4" onclick={toggleMenu}>
     <Icon src={Bars3} class="w-6 h-6 text-white" />
   </button>
 
