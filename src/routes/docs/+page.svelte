@@ -83,7 +83,7 @@
         </p>
       </div>
 
-      <!-- Search Box -->
+
       <div class="mx-auto mt-8 max-w-2xl">
         <div class="relative group">
           <input

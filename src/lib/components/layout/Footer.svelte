@@ -1,4 +1,11 @@
 <script lang="ts">
+    import type { Icon } from "lucide-svelte";
+
+    interface FooterItem {
+        href: string;
+        label: string;
+        icon?: Icon
+    }
     let { footerItems = [
     {
         href: "/",
@@ -11,18 +18,8 @@
         {#each footerItems as Item}
         <a href="{Item.href}" class="text-white hover:text-gray-300">
             <span>{Item.label}</span>
+            <svelte:component this={Item.icon} class="w-6 h-6" />
         </a>
     {/each}
 </div>
 </footer>
-
-
-
-<style>
-    /* .footer {
-        text-align: center;
-        padding: 1rem;
-        background-color: black;
-        border-top: 1px solid #e9ecef;
-    } */
-</style>

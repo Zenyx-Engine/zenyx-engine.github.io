@@ -119,8 +119,28 @@
 <style lang="postcss">
     :global(.markdown) {
         /* Headers */
-        :global(h1, h2, h3, h4, h5, h6) {
-            @apply font-semibold text-white border-b border-zinc-800 pb-3;
+        :global(h1) {
+            @apply text-3xl font-semibold text-white border-b border-zinc-800 pb-3;
+        }
+
+        :global(h2) {
+            @apply text-2xl font-semibold text-white border-b border-zinc-800 pb-3;
+        }
+
+        :global(h3) {
+            @apply text-xl font-semibold text-white border-b border-zinc-800 pb-3;
+        }
+
+        :global(h4) {
+            @apply text-lg font-semibold text-white border-b border-zinc-800 pb-3;
+        }
+
+        :global(h5) {
+            @apply text-base font-semibold text-white border-b border-zinc-800 pb-3;
+        }
+
+        :global(h6) {
+            @apply text-sm font-semibold text-white border-b border-zinc-800 pb-3;
         }
 
         /* Paragraphs and spacing */
