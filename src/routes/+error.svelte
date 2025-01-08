@@ -7,8 +7,8 @@
     import { page } from '$app/stores'; 
     
     let mounted = false;
-    let mouseX = 0;
-    let mouseY = 0;
+    let mouseX = $state(0);
+    let mouseY = $state(0);
     let statuscode = $page.status
     
     const errorMessages = [
@@ -66,7 +66,7 @@
   
   <div 
     class="min-h-screen bg-black overflow-hidden relative flex items-center justify-center"
-    on:mousemove={handleMouseMove}
+    onmousemove={handleMouseMove}
     role="presentation"
   >
     <!-- Grid with glow -->
