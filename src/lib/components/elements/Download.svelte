@@ -1,5 +1,4 @@
-<script>
-  import { run } from 'svelte/legacy';
+<script lang="ts">
 
     import { onMount } from 'svelte';
     import { Download, Settings, ChevronDown } from 'lucide-svelte';
@@ -33,12 +32,14 @@
   
     let selectedPlatform = $state(downloads[0]);
     let selectedArchitecture = $state(selectedPlatform.architectures[0]);
+    $effect(() => {
+          selectedArchitecture = selectedPlatform.architectures[0];
+        });
     let platformDropdownOpen = $state(false);
     let architectureDropdownOpen = $state(false);
   
     let availableArchitectures = $derived(selectedPlatform.architectures);
-    run(() => {
-      // Reset architecture if current one not available in new platform
+    $effect(() => {
       if (!availableArchitectures.includes(selectedArchitecture)) {
         selectedArchitecture = availableArchitectures[0];
       }
@@ -49,7 +50,7 @@
       return () => mounted = false;
     });
 
-    const handleMouseMove = (/** @type {{ clientX: number; clientY: number; }} */ event) => {
+    const handleMouseMove = (/** @type {{ clientX: number; clientY: number; }} */ event: { clientX: number; clientY: number; }) => {
       if (!mounted) return;
       mouseX = event.clientX;
       mouseY = event.clientY;
@@ -69,7 +70,7 @@
     /**
      * @param {{ platform: string; architectures: { name: string; label: string; link: string; }[]; }} platform
      */
-    function selectPlatform(platform) {
+    function selectPlatform(platform: { platform: string; architectures: { name: string; label: string; link: string; }[]; }) {
       selectedPlatform = platform;
       platformDropdownOpen = false;
     }
@@ -77,7 +78,7 @@
     /**
      * @param {{ name: string; label: string; link: string; }} arch
      */
-    function selectArchitecture(arch) {
+    function selectArchitecture(arch: { name: string; label: string; link: string; }) {
       selectedArchitecture = arch;
       architectureDropdownOpen = false;
     }
