@@ -7,10 +7,10 @@
       return () => mounted = false;
     });
   
-    const handleMouseMove = (/** @type {{ clientX: number; clientY: number; }} */ event) => {
+    const handleMouseMove = (/** @type {{ pageX: number; pageY: number; }} */ event) => {
       if (!mounted) return;
-      mouseX = event.clientX;
-      mouseY = event.clientY;
+      mouseX = event.pageX;
+      mouseY = event.pageY;
     }
   </script>
 

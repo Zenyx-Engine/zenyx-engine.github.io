@@ -86,6 +86,7 @@
 <div 
   class="min-h-screen bg-black overflow-hidden relative flex items-center justify-center"
   onmousemove={handleMouseMove}
+  role="presentation"
 >
   <!-- Grid with glow -->
   <div class="absolute inset-0"

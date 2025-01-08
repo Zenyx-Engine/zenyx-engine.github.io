@@ -18,7 +18,7 @@
         {#each footerItems as Item}
         <a href="{Item.href}" class="text-white hover:text-gray-300">
             <span>{Item.label}</span>
-            <svelte:component this={Item.icon} class="w-6 h-6" />
+            <Item.icon class="w-6 h-6" />
         </a>
     {/each}
 </div>
