@@ -1,17 +1,21 @@
-<!-- src/routes/+page.svelte -->
-<script>
+<script lang="ts">
     import Bento from "$lib/components/elements/Bento.svelte";
-import Hero from "$lib/components/elements/Hero.svelte";
+    import Hero from "$lib/components/elements/Hero.svelte";
 
-const features = [
-    // Row 1 - Main features (large cards)
+    interface Feature {
+        title: string;
+        description: string;
+        area: string;
+        className: string;
+    }
+    
+    const features: Feature[] = [
     {
         title: "Universal Deployment",
         description: "Deploy seamlessly across public clouds, private infrastructure, or hybrid environments. Support for all major cloud providers and on-premises solutions.",
         area: "feat1",
         className: "lg:col-span-2"
     },
-
     {
         title: "Lightning Fast Performance",
         description: "Optimized build and deployment pipeline delivers maximum speed and efficiency.",
@@ -30,7 +34,6 @@ const features = [
         area: "feat5",
         className: "lg:col-span-1"
     },
-    // Row 3 - Infrastructure features (medium cards)
     {
         title: "Service Mesh Integration",
         description: "Built-in service mesh provides advanced networking, traffic management, and observability. Support for Istio, Linkerd, and custom implementations.",
@@ -43,7 +46,6 @@ const features = [
         area: "feat7",
         className: "lg:col-span-1"
     },
-    // Row 4 - Operations features
     {
         title: "Real-time Monitoring",
         description: "Comprehensive monitoring and alerting capabilities with custom dashboards.",
@@ -58,15 +60,16 @@ const features = [
     }
 ];
 
-
 </script>
 
 <Hero />
-<div id="target">
-<Bento/>
+    <div id="features" style="scroll-margin-top: 80px;">
+        <Bento/>
 </div>
+
+
 <style>
-    html {
+    :global(html) {
         scroll-behavior: smooth;
     }
 </style>

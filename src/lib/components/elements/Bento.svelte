@@ -1,8 +1,14 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { Cloud, Zap, Shield, Terminal, GitBranch, Network, Cpu, Activity, Settings,FireExtinguisher,Puzzle } from 'lucide-svelte';
-
-  const features = [
+  interface Feature {
+    icon: any;
+    title: string;
+    description: string;
+    area: string;
+    className: string;
+  }
+  const features: Feature[] = [
     {
         icon: GitBranch,
         title: "Open source",
@@ -102,6 +108,7 @@
     mouseY = event.clientY;
   }
 </script>
+  <!-- Svelte is being stupid, the role is infact not redundant-->
   <section 
     class="py-0 px-0 bg-black relative"
     onmousemove={handleSectionMouseMove}

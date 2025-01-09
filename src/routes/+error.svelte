@@ -97,12 +97,6 @@
         {getRandomMessage(statuscode)}
       </p>
   
-      <!-- Animated wave decoration -->
-      <div class="relative h-32 mb-8">
-        <div class="wave1"></div>
-        <div class="wave2"></div>
-        <div class="wave3"></div>
-      </div>
   
       <button>
         <a 
@@ -143,24 +137,6 @@
   
     .animate-glitch {
       animation: glitch 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
-    }
-  
-    .wave1, .wave2, .wave3 {
-      position: absolute;
-      width: 200%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(234,178,84,0.3), transparent);
-      animation: wave 8s infinite linear;
-    }
-  
-    .wave2 {
-      animation-delay: -4s;
-      opacity: 0.5;
-    }
-  
-    .wave3 {
-      animation-delay: -2s;
-      opacity: 0.2;
     }
   
     :global(body) {

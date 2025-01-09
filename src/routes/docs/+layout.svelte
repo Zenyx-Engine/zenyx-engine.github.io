@@ -1,14 +1,4 @@
 <script lang="ts">
-  import { page } from '$app/stores';
-  import { 
-    ChevronRight,
-    Search,
-    Menu,
-    X,
-    ChevronDown
-  } from 'lucide-svelte';
-  import { fade, slide } from 'svelte/transition';
-  
 
   let { data, children } = $props();
   

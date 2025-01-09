@@ -55,11 +55,6 @@
       </p>
       
       <!-- Animated wave decoration -->
-      <div class="absolute -bottom-16 left-0 right-0 h-32 opacity-30">
-        <div class="wave1"></div>
-        <div class="wave2"></div>
-        <div class="wave3"></div>
-      </div>
     </div>
     <button class="mt-8">
     <a 

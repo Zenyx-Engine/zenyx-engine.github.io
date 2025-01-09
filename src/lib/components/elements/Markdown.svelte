@@ -3,6 +3,7 @@
   import { onMount } from 'svelte';
   import { Copy, CheckCheck } from 'lucide-svelte';
 
+
   interface Props {
     content?: string;
   }
@@ -111,108 +112,106 @@
   </symbol>
 </svg>
 
-<!-- Markdown Content -->
 <div class="markdown prose prose-invert max-w-none">
   {@html marked(content, { renderer })}
 </div>
 
 <style lang="postcss">
-    :global(.markdown) {
-        /* Headers */
-        :global(h1) {
-            @apply text-3xl font-semibold text-white border-b border-zinc-800 pb-3;
-        }
-
-        :global(h2) {
-            @apply text-2xl font-semibold text-white border-b border-zinc-800 pb-3;
-        }
-
-        :global(h3) {
-            @apply text-xl font-semibold text-white border-b border-zinc-800 pb-3;
-        }
-
-        :global(h4) {
-            @apply text-lg font-semibold text-white border-b border-zinc-800 pb-3;
-        }
-
-        :global(h5) {
-            @apply text-base font-semibold text-white border-b border-zinc-800 pb-3;
-        }
-
-        :global(h6) {
-            @apply text-sm font-semibold text-white border-b border-zinc-800 pb-3;
-        }
-
-        /* Paragraphs and spacing */
-        :global(p) {
-            @apply text-zinc-300 leading-relaxed mb-4;
-        }
-
-        /* Lists */
-        :global(ul, ol) {
-            @apply my-4 pl-6;
-        }
-
-        :global(li) {
-            @apply text-zinc-300 mb-2;
-        }
-
-        :global(ul > li) {
-            @apply list-disc;
-        }
-
-        :global(ol > li) {
-            @apply list-decimal;
-        }
-
-        /* Code blocks */
-        :global(pre) {
-            @apply bg-zinc-900/70 border border-zinc-800 rounded-lg p-4 my-4 overflow-x-auto;
-        }
-
-        :global(code) {
-            @apply font-mono text-sm;
-        }
-
-        :global(:not(pre) > code) {
-            @apply bg-zinc-800/50 text-yellow-600 px-1.5 py-0.5 rounded text-sm;
-        }
-
-        /* Blockquotes */
-        :global(blockquote) {
-            @apply border-l-4 border-yellow-500/30 bg-zinc-900/30 pl-4 py-2 my-4 text-zinc-300 italic;
-        }
-
-        /* Tables */
-        :global(table) {
-            @apply w-full border-collapse my-4;
-        }
-
-        :global(th) {
-            @apply bg-zinc-800/50 text-left p-2 text-zinc-300 font-medium border border-zinc-700;
-        }
-
-        :global(td) {
-            @apply p-2 border border-zinc-800 text-zinc-300;
-        }
-
-        /* Horizontal rules */
-        :global(hr) {
-            @apply my-8 border-zinc-800;
-        }
-
-        /* Images */
-        :global(img) {
-            @apply max-w-full rounded-lg border border-zinc-800 my-4;
-        }
-
-        /* Task Lists */
-        :global(.task-list-item) {
-            @apply list-none;
-        }
-
-        :global(.task-list-item-checkbox) {
-            @apply mr-2;
-        }
+:global(.markdown) {
+    :global(h1) {
+        @apply text-3xl font-semibold text-white border-b border-zinc-800 pb-3;
     }
+
+    :global(h2) {
+        @apply text-2xl font-semibold text-white border-b border-zinc-800 pb-3;
+    }
+
+    :global(h3) {
+        @apply text-xl font-semibold text-white border-b border-zinc-800 pb-3;
+    }
+
+    :global(h4) {
+        @apply text-lg font-semibold text-white border-b border-zinc-800 pb-3;
+    }
+
+    :global(h5) {
+        @apply text-base font-semibold text-white border-b border-zinc-800 pb-3;
+    }
+
+    :global(h6) {
+        @apply text-sm font-semibold text-white border-b border-zinc-800 pb-3;
+    }
+
+    /* Paragraphs and spacing */
+    :global(p) {
+        @apply text-zinc-300 leading-relaxed mb-4;
+    }
+
+    /* Lists */
+    :global(ul, ol) {
+        @apply my-4 pl-6;
+    }
+
+    :global(li) {
+        @apply text-zinc-300 mb-2;
+    }
+
+    :global(ul > li) {
+        @apply list-disc;
+    }
+
+    :global(ol > li) {
+        @apply list-decimal;
+    }
+
+    /* Code blocks */
+    :global(pre) {
+        @apply bg-zinc-900/70 border border-zinc-800 rounded-lg p-4 my-4 overflow-x-auto;
+    }
+
+    :global(code) {
+        @apply font-mono text-sm;
+    }
+
+    :global(:not(pre) > code) {
+        @apply bg-zinc-800/50 text-yellow-600 px-1.5 py-0.5 rounded text-sm;
+    }
+
+    /* Blockquotes */
+    :global(blockquote) {
+        @apply border-l-4 border-yellow-500/30 bg-zinc-900/30 pl-4 py-2 my-4 text-zinc-300 italic;
+    }
+
+    /* Tables */
+    :global(table) {
+        @apply w-full border-collapse my-4;
+    }
+
+    :global(th) {
+        @apply bg-zinc-800/50 text-left p-2 text-zinc-300 font-medium border border-zinc-700;
+    }
+
+    :global(td) {
+        @apply p-2 border border-zinc-800 text-zinc-300;
+    }
+
+    /* Horizontal rules */
+    :global(hr) {
+        @apply my-8 border-zinc-800;
+    }
+
+    /* Images */
+    :global(img) {
+        @apply max-w-full rounded-lg border border-zinc-800 my-4;
+    }
+
+    /* Task Lists */
+    :global(.task-list-item) {
+        @apply list-none;
+    }
+
+    :global(.task-list-item-checkbox) {
+        @apply mr-2;
+    }
+}
 </style>

@@ -25,6 +25,7 @@
 	"dependencies": {
 		"@steeze-ui/heroicons": "^2.4.2",
 		"@steeze-ui/svelte-icon": "^1.6.2",
+		"@types/node": "^22.10.5",
 		"flowbite-svelte-icons": "^2.0.2",
 		"lucide-svelte": "^0.465.0",
 		"marked": "^15.0.3"

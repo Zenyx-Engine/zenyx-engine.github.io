@@ -7,7 +7,7 @@
     QuestionMarkCircle,
   } from "@steeze-ui/heroicons";
   import { Icon } from "@steeze-ui/svelte-icon";
-  import { GithubSolid,WindowsSolid,ArchiveArrowDownSolid, AppleSolid, WindowSolid,GiftBoxSolid,HomeSolid,QuestionCircleSolid } from "flowbite-svelte-icons";
+  import { QuestionCircleSolid } from "flowbite-svelte-icons";
 
   let leftNavItems = [
     {
@@ -18,7 +18,7 @@
   ];
   let rightNavItems = [
     {
-      href: "/#target",
+      href: "/#features",
       label: "Features",
     },
     {

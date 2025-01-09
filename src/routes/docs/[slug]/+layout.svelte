@@ -9,7 +9,6 @@
   } from 'lucide-svelte';
   import { fade, slide } from 'svelte/transition';
  
-  // Define interfaces with explicit types
   interface Heading {
     text: string;
     slug: string;
