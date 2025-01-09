@@ -2,15 +2,23 @@
 <script lang="ts">
     import { onMount } from 'svelte';
     import { fade } from 'svelte/transition';
+
     
     import Markdown from '$lib/components/elements/Markdown.svelte'
+    import Prism from 'prismjs';
+    import 'prismjs/components/prism-python';
+    import 'prismjs/components/prism-bash';
+    import 'prismjs/components/prism-yaml';
+    import 'prismjs/components/prism-json';
+    import 'prismjs/components/prism-rust';
 
   let { data } = $props();
     
     // Handle markdown content rendering
     onMount(async () => {
+
       // You might want to add syntax highlighting here
-      // e.g., Prism.highlightAll();
+      Prism.highlightAll();
     });
   </script>
   

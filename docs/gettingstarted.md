@@ -60,8 +60,11 @@ for i in range(10):
     time.sleep(0.5)
     print i
 ```
-
-
+```rust
+fn main() {
+  println!("Happy Halloween!")
+}
+```
 
 ### An h3 header ###
 

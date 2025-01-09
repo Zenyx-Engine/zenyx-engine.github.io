@@ -54,7 +54,6 @@
         We're building something amazing here. Check back soon!
       </p>
       
-      <!-- Animated wave decoration -->
     </div>
     <button class="mt-8">
     <a 

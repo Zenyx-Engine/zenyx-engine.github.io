@@ -8,7 +8,9 @@
     ChevronDown
   } from 'lucide-svelte';
   import { fade, slide } from 'svelte/transition';
- 
+  import {onMount} from 'svelte';
+  onMount(() => {
+  });
   interface Heading {
     text: string;
     slug: string;
