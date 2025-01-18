@@ -9,7 +9,7 @@
     let { footerItems = [
     {
         href: "/",
-        label: "Placeholder"
+        label: ""
     }
 ] }: { footerItems?: FooterItem[] } = $props();
 </script>

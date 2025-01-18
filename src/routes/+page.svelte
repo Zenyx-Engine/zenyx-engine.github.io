@@ -1,6 +1,8 @@
 <script lang="ts">
     import Bento from "$lib/components/elements/Bento.svelte";
     import Hero from "$lib/components/elements/Hero.svelte";
+    import {Download} from "lucide-svelte";
+    import DownloadPrompt from "$lib/components/elements/DownloadPrompt.svelte";
 
     interface Feature {
         title: string;
@@ -65,6 +67,11 @@
 <Hero />
     <div id="features" style="scroll-margin-top: 80px;">
         <Bento/>
+            <DownloadPrompt
+                    mainText="Like the idea? Try the demo today"
+                    subText="If you'd like to test the engine as it develops, you can download it now!"
+                    href="/get"
+            />
 </div>
 
 

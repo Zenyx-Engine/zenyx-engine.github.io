@@ -214,26 +214,8 @@
         :global(img) {
             @apply max-w-full rounded-lg border border-zinc-800 my-4;
         }
-
-        :global(.task-list-item) {
-            @apply list-none;
-        }
-
-        :global(.task-list-item-checkbox) {
-            @apply mr-2;
-        }
     }
 
-    :global(.important-note) {
-        @apply border-l-4 border-red-500 bg-red-100 text-red-700 p-4 my-4;
-    }
 
-    :global(.note-note) {
-        @apply border-l-4 border-blue-500 bg-blue-100 text-blue-700 p-4 my-4;
-    }
-
-    :global(.warning-note) {
-        @apply border-l-4 border-yellow-500 bg-yellow-100 text-yellow-700 p-4 my-4;
-    }
 </style>
     
