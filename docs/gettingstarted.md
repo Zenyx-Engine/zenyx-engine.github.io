@@ -28,9 +28,12 @@ Unicode is supported. ☺
 An h2 header
 ------------
 
+
+
 Here's a numbered list:
 
  1. first item
+ testing testing one two three
  2. second item
  3. third item
 
@@ -65,6 +68,8 @@ fn main() {
   println!("Happy Halloween!")
 }
 ```
+
+> [!IMPORTANT] Comet is currently in early development. this means that the installation > process is not yet stable. and must be done manually.
 
 ### An h3 header ###
 
