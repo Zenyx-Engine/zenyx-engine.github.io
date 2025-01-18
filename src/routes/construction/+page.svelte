@@ -83,23 +83,6 @@
     animation: fade-in 1s ease-out forwards;
   }
 
-  .wave1, .wave2, .wave3 {
-    position: absolute;
-    width: 200%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(234,178,84,0.3), transparent);
-    animation: wave 8s infinite linear;
-  }
-
-  .wave2 {
-    animation-delay: -4s;
-    opacity: 0.5;
-  }
-
-  .wave3 {
-    animation-delay: -2s;
-    opacity: 0.2;
-  }
 
   :global(body) {
     background: black;
